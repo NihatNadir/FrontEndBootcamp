@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Bom</title>
+</head>
+<body>
+
+    <h1>Javascript Bom</h1>
+    <script>
+        // browser object model
+        // tarayıcı ile ilgili nesneleri temsil eder ve tarayıcı penceresi konumu geçmişi ve diğer özelliklerini manipüle etmek için kullanılır.
+
+        console.log(window);
+
+        // window.screen özellikleri ekran bilgileri gibi
+
+        console.group('console.log(window.screen);')
+        console.log(window.screen);
+        console.log('console.log(screen.width); =',screen.width);
+        console.log("console.log(window.screen.width); =",window.screen.width);
+        console.log('console.log(screen.height); =',screen.height);
+        console.log("console.log(window.screen.height); =",window.screen.height);
+        console.groupEnd();
+
+        // window.location özellikleri url gibi
+
+        console.group('console.log(window.location)');
+        console.log(window.location);
+        console.log("console.log(window.location.origin); =",window.location.origin);
+        console.log("console.log(window.location.pathname); =",window.location.pathname);
+        console.log("console.log(window.location.href); =",window.location.href);
+        console.groupEnd();
+
+        // window.navigator özellikleri tarayıcının kendisiyle alakalı bilgiler
+        
+        console.group('console.log(window.navigator)');
+        console.log(window.navigator);
+        console.log("console.log(window.navigator.userAgent); =",window.navigator.userAgent);
+        console.log("console.log(window.navigator.vendor); =",window.navigator.vendor);
+        console.groupEnd();
+
+        // timing events
+
+        setTimeout(function() {
+            console.log('setTimeout');
+        }, 1000);
+
+        var count = 0;
+        var interval = setInterval(() =>{
+            if(count === 5){
+                clearInterval(interval);
+            }else{
+                count += 1;
+                console.log('setInterval',count);
+            }   
+        },1000);
+
+
+    </script>
+    
+</body>
+</html>

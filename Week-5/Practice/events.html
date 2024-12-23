@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Events</title>
+</head>
+<body>
+
+    <h1 class="header">Javascript Events</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam laboriosam maiores libero earum sequi deleniti neque odit enim. Cupiditate maiores quam dignissimos eum sapiente, nihil unde obcaecati quos mollitia laboriosam.</p>
+    
+    <script>
+
+
+        // AnimationEvent = CSS Animasyonları
+
+        // ClipboardEvent = Panonun değiştirilmesi
+
+        // DragEvent = Sürükle ve bırak etkileşimi
+
+        // FocusEvent = Odakla ilgili etkinlikler
+
+        // InputEvent = Kullanıcı girişi
+
+        // KeyboardEvent = Klavye etkileşimi
+
+        var body = document.body;
+
+        function handleKeyUp(event){
+            console.log('keyup',event);
+        }
+
+        function handleKeyDown(event){
+            console.log('keydown',event);
+        }
+
+        body.addEventListener('keyup',handleKeyUp);
+        body.addEventListener('keydown',handleKeyDown);
+
+       
+
+
+
+
+        // MouseEvent = Fare etkileşimi
+
+        // TouchEvent = Dokunmatik etkileşim
+
+        // WheelEvent = Fare-Tekerlek etkileşimi
+
+        // UiEvent = Kullanıcı arayüzü etkileşimi
+
+
+
+        
+    </script>
+</body>
+</html>

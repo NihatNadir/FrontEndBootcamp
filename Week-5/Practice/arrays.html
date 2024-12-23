@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Arrays</title>
+</head>
+<body>
+
+    <h1>Javascript Arrays</h1>
+    
+    <script>
+        /*
+            dizi içerisine hem number hemde string hemde object konulabilir.
+        */
+        let numbers = [-1,3,2,4];
+        let strings = ['B','C','D','D','DB'];
+
+        numbers[0] = 1;
+
+        console.log("Orjinal hali",strings);
+        // dizinin sonuna eklenir
+        strings.push('push','G');
+        console.log("strings.push('push','G'); ile 'push' ve 'G' eklendi",strings);
+
+        // dizinin başına eklenir
+        strings.unshift('unshift');
+        console.log("strings.unshift('unshift'); ile başa eklendi",strings);
+
+        // dizinin belirli bir alana ekleme
+        strings.splice(2); // eğer bu durumda bırakırsak 2. indexten sonraki tüm elemanları siler. bu durumda 0 ve 1 kalır
+        console.log("strings.splice(2); ile 2.index ve sonrası silindi",strings);
+
+        strings = ['B','C','D','D'];
+        strings.splice(2,1,'J');
+        console.log("strings.splice(2,1,'J'); ile 2'den başla 1 eleman sil ve 'J' elemanını ekle dedik",strings);
+
+        // dizinin sonundaki eleman silinir.
+        strings.pop();
+        console.log('strings.pop(); ile son eleman silindi',strings);
+
+        
+        // dizinin ilk elemanı silinir.
+        strings.shift();
+        console.log("strings.shift(); ile ilk eleman silinir",strings);
+
+        // dizinin elemanlarını sıralama 
+        console.log("numbers.sort()",numbers.sort());
+
+        // dizinin elemanlarını tersten dizer önce sort kullanmak gerek
+        console.log("numbers.reverse()",numbers.reverse());
+
+        // dizi içindeki her eleman ile işlem yapma
+        const reduced = numbers.reduce(function(total,value){
+            return total+value;
+        },0);
+        console.log("array.reduce(callback, başlangıçDeğeri); şeklinde kullanılır",reduced)
+        
+        // 2 dizi birleştirme
+        const concat = numbers.concat([5,3,4,7,8]);
+        console.log("const concat = numbers.concat([5,3,4,7,8]); ile numbers dizisi ile sayılar birleştirildi.",concat);
+
+        // dizi içindeki tüm elemanlar için koşulu sınama eğer dizi içerisindeki bir eleman koşula uymazsa false döner ve gibi
+        const isOk = numbers.every((value) => {
+            if(value > 0){
+                return true;
+            };
+        });
+        console.log('numbers.every(callback)',isOk);
+
+        // dizi içindeki bazı elemanlar için koşulu sınama içlerinden biri koşula uyarsa true döner veya gibi 
+        const isSome = numbers.some((value) => {
+            if(value > 0){
+                return true;
+            };
+        });
+        console.log('numbers.some(callback)',isSome);
+
+        // dizinin belli bir kısmını böler başlangıçtan bitişe kadar son dahil değil
+        strings = ['B','C','D','D'];
+        const sliced = strings.slice(1,3);
+        console.log("strings.slice(1,3)",sliced);
+
+        // dizideki elemanları join içinde belirtilen değere göre elemanlar arasına ekleyerek bir metin haline getirir
+        strings = ['B','C','DB','DA'];
+        const joined = strings.join(',');
+        console.log("strings.join(',');",joined);
+
+        // dizi içinde eleman arama bulunan ilk değeri getirir
+        const finded = strings.find(function(value){
+            if(value.includes('D')){
+                return value;
+            };
+        });
+        console.log("strings.find(callback)",finded);
+
+        // dizi içinde eleman arama işlemi yapar geriye bulduğu elemanları dizi olarak döner
+        const char = 'D'
+        const filtered = strings.filter(function(value){
+            if (value.includes(char)){
+                return value;
+            };
+        });
+
+        // her değer tek tek alınır char için içerirse bu değer filtered1 içine eklenir, dizideki son elemana kadar denenir en sonunda dizi console.log ile yazdırılır.
+        const filtered1 = strings.filter(
+            x => x.includes(char)
+        );
+
+        console.log("strings.filter(callback)",filtered);
+        console.log("strings.filter(callback)",filtered1);
+
+        // dizi içindeki tüm elemanlar için işlem yap
+        const mapped = strings.map(function(value){
+            return '(' + value + ')';
+        });
+
+        console.log("strings.map(callback)",mapped);
+
+        // dizi içindeki elemanın aramaya baştan başlar karşılaştığı ilk değişkenin indexini alır eğer eleman yoksa -1 döner
+        strings = ['B','C','D','DB','DB'];
+        const index = strings.indexOf('DB');
+        console.log("strings.indexOf('DB');",index);
+
+        // dizi içindeki elemanın aramaya sondan başlar karşılaştığı ilk değişkenin indexini alır eğer eleman yoksa -1 döner
+        const index1 = strings.lastIndexOf('DB');
+        console.log("strings.lastIndexOf('DB');",index1);
+
+        // dizi içinde at(2) içinde verilen sayı index göre dizi içindeki elemanı döner
+        const at = strings.at(2);
+        console.log("strings.at(2);",at);
+
+        const isBelowThreshold = (currentValue) => currentValue < 40;
+
+        const array1 = [1, 30, 39, 29, 10, 13];
+
+        console.log(array1.every(isBelowThreshold));
+        // Expected output: true
+
+        const fonksiyonAdi1 = (parametre1, parametre2) => {
+        // Fonksiyonun içinde yapılacak işlemler
+        return sonuc; // Opsiyonel: Değer döndürebilir
+        };
+        
+        
+        
+        strings = ['B','C','D','D'];
+        console.dir(numbers);
+        console.dir(strings);
+    </script>
+</body>
+</html>

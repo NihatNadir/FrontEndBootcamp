@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Objects</title>
+</head>
+<body>
+
+    <h1>Javascript Objects</h1>
+    <h2></h2>
+    <p>
+        <pre>
+            const user = {
+                name:'John',
+            };
+            console.dir(user);
+            console.log(user);
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>Object.assign(target, source)</h2>
+    <p>Varolan nesnenin içine başka nesnenin eklenmesini istediğimizde kullanırız. target kısmına eklenmesini istediğimiz object değişkeninin adını yazıyoruz. source kısmına ise ekleyeceğimiz key-value değerlerini yazıyoruz.</p>
+    <p>
+        <pre>
+            Object.assign(user,{
+                property1: 'Value1',
+                property2: 'Value2',
+                property3: 'Value3',
+                property4: 'Value4',
+                property5: 'Value5',
+            });
+        </pre>
+    </p>
+    <p>Burada user object'ine closure içinde key ve value ekliyoruz.</p>
+    
+    <br>
+    <hr>
+
+    <h2>Object ile ilgili diğer metotlar ve kullanılışları</h2>
+    <p>Object.keys() ile key değerleri yazdırılır.</p>
+    <p>Object.values() ile value değerleri yazdırılır.</p>
+    <p>Object.entries() ile hem key hem de value değerleri yazdırılır.</p>
+    <p>
+        <pre>
+            console.log('Object.keys()',Object.keys(user));
+            console.log('Object.values()',Object.values(user));
+            console.log('Object.entries()',Object.entries(user));
+        </pre>
+    </p>
+    
+    
+    <script>
+        const user = {
+            name:'John',
+            surname:'Doe',
+            age:20,
+            job:'Software Developer',
+            hobbies:['Running', 'Tennis'],
+            admin:false,
+            getfullinfo: function(){
+                return this.name + ' ' + this.surname;
+            }
+        };
+        user.country = 'USA';
+        
+        Object.assign(user,{
+            property1: 'Value1',
+            property2: 'Value2',
+            property3: 'Value3',
+            property4: 'Value4',
+            property5: 'Value5',
+        });
+        console.log('Object.keys()',Object.keys(user));
+        console.log('Object.values()',Object.values(user));
+        console.log('Object.entries()',Object.entries(user));
+        console.dir(user);
+        console.log(user.getfullinfo());
+
+    </script>
+    
+</body>
+</html>

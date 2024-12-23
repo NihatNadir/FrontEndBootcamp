@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Console</title>
+</head>
+<body>
+
+    <h1>Javascript Console</h1>
+    <h2>console.log()</h2>
+    <p>Hata mesajlarını konsola yazdırır.</p>
+    <p>
+        <pre>
+            console.log("Merhaba Dünya!");
+            console.log("Değer:", 42);
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.dir()</h2>
+    <p>console.dir() metodu, bir JavaScript nesnesini hiyerarşik (tree-like) yapıda görüntülemek için kullanılır. Bu, özellikle bir nesnenin tüm özelliklerini, yöntemlerini ve iç içe yapısını incelemek için faydalıdır.</p>
+    <p>
+        console.log() ile Farkı Nedir?        
+    </p>
+    <p>
+        console.log(), bir nesneyi düz bir biçimde konsola yazdırır. Bazı durumlarda, nesne düzgün bir şekilde genişletilemeyebilir.        
+    </p>
+    <p>
+        console.dir(), nesneyi etkileşimli ve ayrıntılı bir şekilde gösterir. Tarayıcı konsolu, nesnenin genişletilebilir bir görünümünü sağlar.
+    </p>
+    <p>
+        <pre>
+            console.log("Merhaba Dünya!");
+            console.log("Değer:", 42);
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.warn()</h2>
+    <p>Uyarı mesajlarını konsola yazdırır.</p>
+    <p>
+        <pre>
+            console.warn("Bu yöntem yakında kaldırılacak.");
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+    <h2>console.info()</h2>
+    <p>Bilgilendirme amaçlı mesajlar yazdırır (tarayıcılara bağlı olarak console.log ile aynı çalışabilir).</p>
+    <p>
+        <pre>
+            console.info("Sunucu başlatıldı: Port 3000");
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+    
+    <h2>console.table()</h2>
+    <p>Dizi veya nesne verilerini tablo formatında görüntüler.</p>
+    <p>
+        <pre>
+            const users = [
+              { id: 1, name: "Ali", age: 30 },
+              { id: 2, name: "Ayşe", age: 25 },
+            ];
+            console.table(users);
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.group() ve console.groupEnd()</h2>
+    <p>Mesajları gruplandırarak düzenli bir yapı sağlar.</p>
+    <p>
+        <pre>
+            console.group("Kullanıcı Bilgileri");
+            console.log("Ad: Ali");
+            console.log("Yaş: 30");
+            console.groupEnd();
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.time() ve console.timeEnd()</h2>
+    <p>Kodun belirli bir bölümünün çalışma süresini ölçer.</p>
+    <p>
+        <pre>
+            console.time("Loop Süresi");
+            for (let i = 0; i < 1000000; i++) {}
+            console.timeEnd("Loop Süresi");
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.assert()</h2>
+    <p>Belirtilen bir koşul false olduğunda bir hata mesajı görüntüler.</p>
+    <p>
+        <pre>
+            console.assert(2 + 2 === 5, "Matematik hatası!");
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+    <h2>console.trace()</h2>
+    <p>Kodun hangi noktalardan çağrıldığını bir yığın izi (stack trace) ile gösterir.</p>
+    <p>
+        <pre>
+            function foo() {
+                console.trace("İzleme noktası");
+              }
+              foo();
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+
+
+    <script>
+
+        console.log("Merhaba Dünya!");
+        console.log("Değer:", 42);
+
+        const user = {
+            name: "Ali",
+            age: 30,
+            address: {
+                city: "Istanbul",
+                postalCode: 34000,
+            },
+        };
+        console.dir(user);
+
+        console.warn("Bu yöntem yakında kaldırılacak.");
+
+        console.info("Sunucu başlatıldı: Port 3000");
+
+        const users = [
+            { id: 1, name: "Ali", age:30 },
+            { id: 2, name: "Ayşe", age:25 },
+        ];
+        console.table(users);
+
+        console.group("Kullanıcı Bilgileri");
+        console.log("Ad: Ali");
+        console.log("Yaş: 30");
+        console.groupEnd();
+
+        console.time("Loop Süresi");
+            for (let i = 0; i < 1000000; i++) {}
+            console.timeEnd("Loop Süresi");
+
+        console.assert(2 + 2 === 5, "Matematik hatası!");
+
+        function foo() {
+                console.trace("İzleme noktası");
+              }
+              foo();
+
+    </script>
+</body>
+</html>

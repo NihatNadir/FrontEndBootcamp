@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <style>
+        body.custom-class{
+            background-color: #F2F2F2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript DOM</h1>
+    <ul>
+        <li id="html" class="course">HTML</li>
+        <li id="css" class="course">CSS</li>
+        <li id="javascript" class="course">Javascript</li>
+        <li id="tailwindcss" class="course">Tailwind CSS</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel neque, adipisci assumenda saepe repellendus libero ducimus, dolor, aspernatur omnis voluptatem sequi ea numquam est sunt eveniet. Incidunt vero vel quas.</p>
+    
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo distinctio assumenda voluptas deserunt repellat? Sapiente maxime praesentium ea veniam veritatis facere. Consectetur doloribus ullam, ipsa earum magnam excepturi necessitatibus ab!</p>
+
+    <script>
+
+        // document object model
+        // bir belge içeriğini temsil eder ve HTML/XML belgelerini manipüle etmek için kullanılır. Belge düğümleriyle çalışmayı sağlar.
+
+        console.log(document);
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.body);
+
+
+        // arkaplan rengi ayarlama
+        var body = document.body;
+        // body.style.backgroundColor = '#F2F2F2';
+        body.setAttribute('id','custom-id');
+        
+        // dataset ile data- uuid ile datauuid oluşturduk 
+        // body.setAttribute('data-uuid','#123');
+        body.dataset.uuid = '#333';
+
+        // class ekleme
+        body.classList.add('custom-class','custom-class1');
+
+        // class silme
+        body.classList.remove('custom-class','custom-class1');
+
+        // belli bir zamandan sonra işlem yapmak için
+        setTimeout(() => {
+            body.classList.add('custom-class','custom-class1');
+        }, 3000);
+
+        // id'ye göre element
+        var elementByid = document.getElementById('html');
+        console.group("document.getElementById('html');")
+        console.log(elementByid);
+        console.dir(elementByid);
+        elementByid.setAttribute('id','');
+        elementByid.removeAttribute('id');
+        console.groupEnd();
+
+        // class'a göre element
+        var elementByClass = document.getElementsByClassName('course');
+        console.group("document.getElementsByClassName('course');");
+        console.log(elementByClass);
+        console.groupEnd();
+
+        // tagName'e göre seçme
+        var elementByTagName = document.getElementsByTagName('p');
+        console.group("document.getElementsByTagName('p');");
+        console.log(elementByTagName);
+        console.groupEnd();
+
+        // querySelector ile id bulma 
+        let idQuerySelector = document.querySelector('#javascript');
+        console.group("document.querySelector('#javascript');");
+        console.log(idQuerySelector);
+        console.groupEnd();
+        
+        // querySelector ile class bulma ama ilk sıradakini alır
+        let classQuerySelector = document.querySelector('.course');
+        console.group("document.querySelector('.course');");
+        console.log(classQuerySelector);
+        console.groupEnd();
+        
+        // querySelectorAll ile class bulma hepsini getirir.
+        let classQuerySelectorAll = document.querySelectorAll('.course');
+        console.group("document.querySelectorAll('.course');");
+        console.log(classQuerySelectorAll);
+        console.groupEnd();
+
+        
+
+
+    </script>
+
+</body>
+</html>

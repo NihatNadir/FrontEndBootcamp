@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+
+
+    <script>
+        /* primitive değişkenler RAM'de yerleşmesi değişken adını istediğimizde değer döner */
+        let str = "John";
+        let str1 = 'John';
+        let str2 = "John's";
+        console.log(typeof str,str);
+        console.log(typeof str1,str1);
+        console.log(typeof str2,str2);
+
+        let int = 29;
+        console.log(typeof int,int);
+
+        let bool = true;
+        console.log(typeof bool,bool);
+
+        let bigint = BigInt('4564562354324867896879');
+        console.log(typeof bigint,bigint);
+        /* BigInt('') kullanılır. Sonunda n var number olmadığını belirtir */
+
+        let symbol = Symbol('Aras');
+        console.log(typeof symbol,symbol);
+        /* Symbol('') kullanılır. Değiştirilemez bir veri oluşturur. */
+
+        let x;
+        console.log(typeof x,x);
+        /* Tanımlanmış ama değer atanmamış değişkenler undefined değer alır. Typeof ve değeri undefined */
+
+        let y = null;
+        console.log(typeof y,y)
+        /* null değer atanırsa typeof object olur. */
+
+        let obj = {
+            name:'John',
+            age:28,
+            admin:true,
+        };
+        console.log(typeof obj,obj);
+        
+        /* Immutable */
+        let name = "John";
+        let cloneName = name;        
+        cloneName = "Doe";
+        console.log('Immutable',name,cloneName)
+        /* cloneName'i name olarak tanımlamıştık daha sonra kopyaladığımız değişkeni değiştirdik. Orjinal name değişmedi!!! Bunu bazen yapamıyoruz. */
+
+        /* Mutable */
+        let user = {
+            name : "John",
+
+        };
+        let cloneUser = user;
+        cloneUser.name = 'Doe';
+        console.log("Mutable",user,cloneUser)
+        /* referans tipli oldukları için kopyalanan değer değiştirilirse orjinal değişkende değişir */
+
+    </script>
+    
+</body>
+</html>

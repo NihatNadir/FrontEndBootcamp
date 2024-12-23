@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kayıt Formu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="title-content">
+      <h1 id="title">Kullanıcı Kayıt Formu</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque animi
+        soluta neque, culpa qui tenetur veniam vitae ipsum, mollitia omnis
+        quasi, consectetur molestiae voluptatibus? Reprehenderit ducimus maiores
+        molestias alias illum?
+      </p>
+    </div>
+    <form action="" id="survey-form">
+      <input type="text" id="name" name="name" placeholder="İsminizi Giriniz" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="E-Mail Adresiniz"
+      />
+      <input
+        type="number"
+        id="number"
+        minlength="8"
+        maxlength="8"
+        placeholder="Şifre"
+      />
+      <select name="fruit" id="fruit" class="fruit">
+        <option value="seçiniz">Seçiniz</option>
+        <option value="kivi">Kivi</option>
+        <option value="muz">Muz</option>
+      </select>
+    <div class="label">
+      <input type="radio" name="man" id="man" />
+      <label for="man"> Erkek</label>
+      <input type="radio" name="woman" id="woman" />
+      <label for="woman"> Kadın</label> <br>
+      <input type="checkbox" name="kvkk" id="kvkk" value="kvkk" />
+      <label for="kvkk">Gizlilik Sözleşmesini Okudum Kabul Ediyorum</label>
+    </div>
+      <textarea
+        name="message"
+        id="message"
+        cols="30"
+        rows="10"
+        placeholder="Mesajınızı Giriniz"
+      ></textarea>
+      <input type="submit" value="Gönder" />
+    </form>
+  </body>
+</html>

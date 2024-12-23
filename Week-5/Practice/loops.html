@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Loops</title>
+</head>
+<body>
+
+    <script>
+        // while
+        let i = 0;
+        while (i < 5) {
+          console.log(`i'nin değeri: ${i}`);
+          i++;
+        }
+
+        console.log("----------");
+
+        // do ... while Döngü en az bir kez çalışır ve ardından koşula bakılır.
+        let x = 8;
+        do {
+          console.log(`i'nin değeri: ${x}`);
+          x++;
+        } while (x < 5);
+
+        console.log("----------");
+
+        // for 
+        for(let i = 0;i < 5;i++){
+            if(i === 2){
+                break;
+            }
+            console.log('for',i)
+        }
+
+        console.log("----------");
+
+        // for ... in loop Bir nesnenin özelliklerini veya bir dizinin indekslerini gezmek için kullanılır.
+        const person = {
+            name:'John',
+            age:28,
+            city:'New York'
+        };
+        for (const key in person){
+            const value = person[key];
+            console.log(`const value = person[key]; value = ${value}`)
+            console.log('key ve value = ',key,value);
+            console.log('for (const key in person) key=',key);
+            console.log('person[key] = ',person[key]);
+            
+        }
+
+        console.log("----------");
+
+        // for ... of loop Bir diziyi veya iterable (tekrarlanabilir) bir yapıyı gezmek için kullanılır.
+        const colors = ["Kırmızı", "Yeşil", "Mavi"];
+        for (let color of colors) {
+            console.log(color);
+        }
+        // ekran çıktıları 
+        // Kırmızı
+        // Yeşil
+        // Mavi
+
+        // break ve continue
+        // break: Döngüyü tamamen sonlandırır.
+        // continue: O anki döngü iterasyonunu atlayarak bir sonrakine geçer.
+
+    </script>
+    
+</body>
+</html>
