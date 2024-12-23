@@ -72,7 +72,7 @@ Contains the JavaScript code for:
 Here is a preview of the project:
 
 
-![Project Screenshot](![image](https://github.com/user-attachments/assets/cb10ce50-f67d-42ce-b77a-4823dc14c953))
+![Project Screenshot]![image](https://github.com/user-attachments/assets/cb10ce50-f67d-42ce-b77a-4823dc14c953)
 
 ---
 
