@@ -9,6 +9,7 @@
 
     <h1 class="header">Javascript Events</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam laboriosam maiores libero earum sequi deleniti neque odit enim. Cupiditate maiores quam dignissimos eum sapiente, nihil unde obcaecati quos mollitia laboriosam.</p>
+    <button class="btnClear">Clear Event</button>
     
     <script>
 
@@ -38,7 +39,26 @@
         body.addEventListener('keyup',handleKeyUp);
         body.addEventListener('keydown',handleKeyDown);
 
-       
+       function handleClear(){
+        body.removeEventListener('keyup',handleKeyUp);
+        body.removeEventListener('keydown',handleKeyDown);
+        console.log("Keyboard events have been disabled.");
+       }
+
+       function handleRestore() {
+        // Klavye olaylarını tekrar aktif hale getiriyoruz
+        body.addEventListener('keyup', handleKeyUp);
+        body.addEventListener('keydown', handleKeyDown);
+        
+        // Butondan ayrıldığında mesaj verebiliriz
+        console.log("Keyboard events have been restored.");
+}
+
+       var btn = document.querySelector('.btnClear');
+       btn.addEventListener('mouseover',handleClear);
+       btn.addEventListener('mouseout', handleRestore);
+
+
 
 
 

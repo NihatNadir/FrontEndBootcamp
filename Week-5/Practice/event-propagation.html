@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Event Propagation</title>
+    <style>
+        div{
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        #div1, #div9{
+            background-color: #999;
+        }
+
+        #div2, #div8{
+            background-color: #777;
+        }
+
+        #div3, #div7{
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Javascript Event Propagation</h1>
+    <h2>Bubbling</h2>
+    <p>Çalışması önce en içteki div'e atanan event'e göre çıktı olarak içerden başlar yani önce div3 event fonksiyon çalışır sonra 2 ve 1 çalışır. div'ler içi içe olduğu durumlarda en içteki div'e event eklediğimizde hepsi çalışır bunu önlemek için handler değişkenini kullanarak stopPropagation() ile durduruyoruz.</p>
+    <p>
+        <pre>
+            div3.addEventListener('click',function(x){
+                console.log('bubbling 3-1');
+                x.stopPropagation();
+            });
+        </pre>
+    </p>
+    <div id="div1">div1
+        <div id="div2">div2
+            <div id="div3">div3
+
+            </div>
+        </div>
+    </div>
+
+    <p>en içteki div de diyelim ki 2 event var bunlardan sadece birini kullanmak istediğimizde üstteki div event kısmında handler değişkeni ile stopImmediatePropagation(); kullanıyoruz</p>
+    <p>
+        <pre>
+            div3.addEventListener('click',function(x){
+                console.log('bubbling 3-1');
+                x.stopImmediatePropagation();
+            });
+           
+            div3.addEventListener('click',function(x){
+                console.log('bubbling 3-2');
+    
+            });
+        </pre>
+    </p>
+    <div id="div4">
+        <div id="div5">
+            <div id="div6">
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <h2>Capturing</h2>
+    <p>Çalışması çıktı olarak en içteki div'e atanan event'e göre önce dıştan başlar yani önce div7 fonksiyonu çalışır sonra içerdeki div'lerin fonksiyonları çalışır. div'ler içi içe olduğu durumlarda en içteki div'e event eklediğimizde hepsi çalışır bunu önlemek için handler değişkenini kullanarak stopPropagation() ile durduruyoruz.</p>
+    <p>
+        <pre>
+            div3.addEventListener('click',function(x){
+                console.log('bubbling 3-1');
+                x.stopPropagation();
+            });
+        </pre>
+    </p>
+    <div id="div7">div7
+        <div id="div8">div8
+            <div id="div9">div9
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var div1 = document.getElementById('div1');
+        var div2 = document.getElementById('div2');
+        var div3 = document.getElementById('div3');
+        
+        var div7 = document.getElementById('div7');
+        var div8 = document.getElementById('div8');
+        var div9 = document.getElementById('div9');
+        
+        div1.addEventListener('click',function(x){
+            console.log('bubbling 1');
+
+        });
+
+        div2.addEventListener('click',function(x){
+            console.log('bubbling 2');
+
+        });
+
+        div3.addEventListener('click',function(x){
+            console.log('bubbling 3');
+            //x.stopImmediatePropagation();
+        });
+       
+        /*
+        div3.addEventListener('click',function(x){
+            console.log('bubbling 3-2');
+
+        });
+        */
+
+        div7.addEventListener('click',function(x){
+            console.log('capturing 7');
+
+        },true);
+
+        div8.addEventListener('click',function(x){
+            console.log('capturing 8');
+
+        },true);
+
+        div9.addEventListener('click',function(x){
+            console.log('capturing 9');
+            x.stopImmediatePropagation();
+        },true);
+
+    </script>
+</body>
+</html>

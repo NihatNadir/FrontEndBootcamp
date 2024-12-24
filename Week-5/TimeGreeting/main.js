@@ -1,13 +1,13 @@
 let name = prompt("Adınız nedir?");
 document.querySelector('#myName').textContent = name;
 const days = [
-    "Pazar",
-    "Pazartesi",
-    "Salı",
-    "Çarşamba",
-    "Perşembe",
-    "Cuma",
-    "Cumartesi"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ];
 function showTime(){
     const today = new Date();

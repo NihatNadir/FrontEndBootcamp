@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Asynchronous</title>
+</head>
+<body>
+
+    <h1>Javascript Asynchronous</h1>
+    <h2>callback</h2>
+    <h3>Sırayla fonksiyon çağırmak için kullanılır.</h3>
+    <button id="callback">Callback</button>
+    <p>
+        <pre>
+            hello(goodbye);
+            function hello(callback){
+                console.log('hello');
+                callback();
+            };
+
+            function goodbye(){
+                console.log('goodbye');
+            }
+        </pre>
+    </p>
+
+    <br>
+    <hr>
+
+
+    <h2>Promise</h2>
+    <h3>eski bir yapı olan callback yerine kullanılır.
+        
+    </h3>
+    <p>
+        <pre>
+            let promise = new Promise(function(resolve, reject) {
+                // executor (the producing code, "singer")
+              });
+        </pre>
+    </p>
+
+    <h2>Callback yerine Promise kullanımı</h2>
+    <h3>
+        Önce fonksiyon tanımlanır. Fonksiyon içinde return ile promise tanımlanır.promise(callback) callback kısmında (resolve,reject) kullanılabilir.
+        Örnek: <pre>
+            function walkDog(){
+                return new Promise(function(resolve,reject){
+                    setTimeout(() => {
+                        .....
+                    },2000);
+            });
+        };
+        </pre>
+        Eğer içinde reject durum olursa diğer durumlara geçemez buradaki örnekte hepsi true ama walkedDog = false; dersek sadece o kısımda reject çalışır ve diğer fonksiyonlara geçiş yapılmaz. 
+    </h3>
+    
+    <p>
+        <pre>
+            function walkDog(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const walkedDog = true;
+                        if(walkedDog){
+                            resolve('You walked the dog');
+                        }else{
+                            reject("You DIDN'T walked the dog");
+                        };
+                    },2000);
+                    
+                });
+            };
+
+            function cleanKitchen(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const cleanedKitchen = true;
+                        if(cleanedKitchen){
+                            resolve('You clean the kitchen');
+                        }else{
+                            reject("You DIDN'T clean the kitchen");
+                        };
+                    },2000);
+                });
+            };
+
+            function takeOutTrash(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const takenOutTrash = true;
+                        if(takenOutTrash){
+                            resolve('You take out the trash');
+                        }else{
+                            reject("You DIDN'T take out the trash");
+                        };
+                    },2000);
+                    
+                });
+            };
+
+            walkDog().then(value => {console.log(value); return cleanKitchen();})
+                     .then(value => {console.log(value); return takeOutTrash();})
+                     .then(value => {console.log(value); console.log("You finished all chores")})
+                     .catch(error => {console.log(error)});
+                
+           
+        </pre>
+    </p>
+
+    <script>
+       
+      
+        function hello(callback){
+            console.log('hello');
+            callback();
+        };
+
+        function goodbye(){
+            console.log('goodbye');
+        }
+
+        hello(() => {
+            goodbye();
+        });
+
+
+        document.querySelector('#callback').addEventListener('click', () => open(close)
+        );
+        function open(callback){
+           
+            console.log('open');
+            setTimeout(() => {
+                callback();
+            }, 2000);
+        }
+
+        function close(){
+            console.log('close');
+        }
+
+        function walkDog(callback){
+        setTimeout(() => {
+            console.log('You walk the dog');
+            callback();
+        }, 2000);
+       };
+
+       function cleanKitchen(callback){
+            setTimeout(() => {
+                console.log('You clean the kitchen');
+                callback();
+            }, 2000);
+       };
+
+       function takeOutTrash(){
+        setTimeout(() => {
+            console.log('You take out the trash');
+            
+        }, 2000);
+       };
+     
+        // walkDog(() => 
+        //    cleanKitchen(() => 
+        //        takeOutTrash()));
+
+        
+       /*
+        -------Promise---------
+       */
+
+       console.log('--------------');
+
+       function walkDog(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const walkedDog = true;
+                        if(walkedDog){
+                            resolve('You walked the dog');
+                        }else{
+                            reject("You DIDN'T walked the dog");
+                        };
+                    },2000);
+                    
+                });
+            };
+
+            function cleanKitchen(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const cleanedKitchen = true;
+                        if(cleanedKitchen){
+                            resolve('You clean the kitchen');
+                        }else{
+                            reject("You DIDN'T clean the kitchen");
+                        };
+                    },2000);
+                });
+            };
+
+            function takeOutTrash(){
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const takenOutTrash = true;
+                        if(takenOutTrash){
+                            resolve('You take out the trash');
+                        }else{
+                            reject("You DIDN'T take out the trash");
+                        };
+                    },2000);
+                    
+                });
+            };
+
+            walkDog().then(value => {console.log(value); return cleanKitchen();})
+                     .then(value => {console.log(value); return takeOutTrash();})
+                     .then(value => {console.log(value); console.log("You finished all chores")})
+                     .catch(error => {console.log(error)});
+
+
+
+
+
+
+    </script>
+</body>
+</html>
