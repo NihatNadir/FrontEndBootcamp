@@ -1,8 +1,8 @@
-[Drum Kit (English)](#drum-kit)
-[Drum Kit (Türkçe)](#drum-kit-türkçe)
-[Drum Kit Project](https://nihatnadir.github.io/FrontEndBootcamp/)
-[Project Screen Shot]([image](https://github.com/user-attachments/assets/3d31aabc-7f21-46ac-bf59-3ca8db0908ff)
-screenshot.png)
+-[Drum Kit (English)](#drum-kit)
+-[Drum Kit (Türkçe)](#drum-kit-türkçe)
+-[Drum Kit Project](https://nihatnadir.github.io/FrontEndBootcamp/)
+-[Project Screen Shot]![image](https://github.com/user-attachments/assets/29ba9c30-1866-4a02-b93b-f544c80414d5)
+
 
 # Drum Kit
 
