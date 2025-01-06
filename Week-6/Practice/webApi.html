@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Web API</title>
+</head>
+<body>
+    <h1>Javascript Web API</h1>
+    <h2>WEB History API</h2>
+    <button onclick="back()">Go Back</button>
+    <button onclick="go()">Go Back 2 Pages</button>
+    <button onclick="forward()">Go Forward</button>
+    <br>
+    <h2>Web Storage API</h2>
+    <button onclick="setItem()">Set Item</button>
+    <button onclick="getItem()">Get Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+    <a href="../../Practice/index.html">asdf</a>
+
+    <br>
+    <h2>Web Fetch API</h2>
+    <button onclick="fetchData()">Fetch Data</button>
+
+    <br>
+
+    <h2>Web Notification API</h2>
+    <button onclick="notifyme()">Notify me</button>
+    <script>
+
+        // Web History API
+        function back(){
+            history.back();
+        };
+       
+        function go(){
+            history.go(-2); // 2 sayfa geri gider
+        };
+
+        function forward(){
+            history.forward();
+        }
+
+        // Web Storage API
+
+        function setItem(){
+            // Local Storage
+            localStorage.setItem('name','Cenk Taner');
+            sessionStorage.setItem('name','Genç Osman Yavaş');
+
+        }
+
+        function getItem(){
+            // Local Storage
+            console.log('localStorage.getItem',localStorage.getItem('name','Cenk Taner'));
+            console.log('sessionStorage.getItem',sessionStorage.getItem('name','Genç Osman Yavaş'));
+
+        }
+
+        function removeItem(){
+            // Local Storage
+            localStorage.removeItem('name','Cenk Taner');
+            sessionStorage.removeItem('name','Genç Osman Yavaş');
+
+        }
+
+        // Web Fetch API
+
+        function fetchData(){
+            fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => {
+                return response.json();
+            })
+            .then(user => {
+                console.log('users',user);
+                console.log(user[0]);
+                console.log(user[0].address.city);
+                
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
+
+        // Web Notification API
+
+        function notifyme(){
+            if('Notification' in window){
+                console.log(Notification);
+                console.log(window);
+
+                if(Notification.permission === 'granted'){
+
+                    console.log('Bildirim gönder');
+                    sayHi(window.navigator.userAgent);
+
+                }else if (Notification.permission === 'denied'){
+
+                    console.log('Bildirim izin verilmedi');
+
+                }else{
+
+                    console.log('Notification API için izin iste');
+                    Notification.requestPermission()
+                    .then(permission => {
+                        if(permission === 'granted'){
+                            console.log('Bildirim gönder');
+                        }
+                    })
+                };
+
+            }else{
+                console.log('Notification API desteklenmiyor.')
+            }
+        }
+
+        function sayHi(param){
+            const notification = new Notification(`Merhaba ${param}`);
+        }
+
+        // Konum izni
+
+        navigator.geolocation.getCurrentPosition(
+        position => {
+            console.log(`Enlem: ${position.coords.latitude}, Boylam: ${position.coords. longitude}`);
+        },
+        error => {
+            if (error.code === error.PERMISSION_DENIED) {
+                console.log('Konum izni reddedildi.');
+            }
+        }
+        );
+
+        // Kamera ve mikrofon izni
+
+        navigator.permissions.query({ name: 'camera' }).then(permissionStatus => {
+        if (permissionStatus.state === 'granted') {
+            console.log('Kamera izni zaten verilmiş.');
+            navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+                console.log('Kameradan görüntü alınıyor.');
+            });
+        } else if (permissionStatus.state === 'prompt') {
+            console.log('Kullanıcıdan kamera izni istemek gerekiyor.');
+            navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+                console.log('Kamera izni verildi.');
+            });
+        } else {
+            console.log('Kamera izni reddedildi.');
+        }
+        });
+
+        // Arka plan senkronizasyonu
+
+        navigator.serviceWorker.ready
+        .then(registration => {
+        registration.sync.register('mySyncTag')
+        .then(() => console.log('Arka plan senkronizasyonu ayarlandı.'))
+        .catch(err => console.error('Arka plan senkronizasyonu başarısız oldu:', err));
+        });
+
+        // İndirme izni
+
+        window.showSaveFilePicker()
+        .then(fileHandle => {
+            console.log('Dosya kaydetme izni alındı:', fileHandle);
+        })
+        .catch(error => {
+            console.log('Dosya kaydetme izni reddedildi.');
+        });
+
+
+    
+
+
+    </script>
+</body>
+</html>

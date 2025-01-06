@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Errors</title>
+</head>
+<body>
+    <h1>Javascript Errors</h1>
+    <button onclick="error()">Error</button>
+    <button onclick="syntaxError()">Syntax Error</button>
+    <button onclick="typeError()">Type Error</button>
+    <hr>
+    <p>Lütfen 5 ile 10 arasında bir sayı girin</p>
+    <input type="text" id="input">
+    <button onclick="test()">Validate</button>
+    <script>
+        // throw'dan sonra kodlar çalışmaz alt alta throw olursa sadece üstteki çalışır
+        function error(){
+            
+            const message = new Error("Hata mesajı") // Error parametre kısmında message yazılır.
+            throw message;
+        }
+
+        function syntaxError(){
+            throw new SyntaxError('Custom SyntaxError');
+        }
+
+        function typeError(){
+            throw new TypeError('Custom TypeError');
+        }
+
+        // try catch sonra hata fırlattıktan sonra çalışır
+
+        try{
+
+            throw new Error("Hata mesajı");
+        }catch (err){
+            if(err instanceof Error){ // err örneği mi Error sınıfının sorusunu soruyoruz. Eğer farklı sınıf seçilirse çalışmaz. instance = örnek, misal
+                console.log('instanced');
+
+            }
+            console.log(err);
+        }
+
+        function validate(value){
+            console.log(value.trim());
+            if(!value.trim()){
+                throw 'Boş değer';
+            }else if (isNaN(value)){ // Not a Number
+                // isNan metin mi sorusunu soruyor
+                // metin ise true; sayı ise false döner
+                //console.log(isNaN(123));  // false (123 bir sayı)
+                //console.log(isNaN('123'));  // false ('123' bir sayı olarak değerlendirilebilir)
+                //console.log(isNaN('abc'));  // true (abc bir sayıya çevrilemez)
+                //console.log(isNaN(NaN));  // true (NaN bir sayıya çevrilemez)
+                //console.log(isNaN(' '));  // false (boş string, 0'a dönüşür)
+                //console.log(isNaN(true));  // false (true, 1'e dönüşür)
+                //console.log(isNaN(false));  // false (false, 0'a dönüşür)
+                throw 'Değer bir sayı değil.'
+            }else if (value < 5 || value > 10){
+                throw "Sayı 5'ten küçük 10'dan büyük olamaz."
+            }
+            return true;
+        }
+        
+        
+        function test(){
+            
+            try{
+                const value = document.querySelector('#input').value;
+                validate(value);
+                console.log('işleminiz başarılı')
+            }catch(err){
+                console.log(err)
+            }
+        }
+    </script>
+    
+</body>
+</html>
