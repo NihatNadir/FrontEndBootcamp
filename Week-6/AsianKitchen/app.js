@@ -82,6 +82,7 @@ const menu = [
     },
   ];
 
+  // Verileri sınıflandırma
 
 const korea = menu.filter( k => {
     if(k.category === "Korea"){
@@ -112,6 +113,7 @@ const koreaButton = document.createElement("button");
 const japanButton = document.createElement("button");
 const chinaButton = document.createElement("button");
 
+// Butonları index.html ekleme
 
 allButton.classList.add("btn-item");
 allButton.textContent = "All";
@@ -131,6 +133,8 @@ filterButtons.appendChild(allButton);
 filterButtons.appendChild(koreaButton);
 filterButtons.appendChild(japanButton);
 filterButtons.appendChild(chinaButton);
+
+// Tıklanacak butona event ekleme ve mouse hareketlerini bulunduğu kısım
 
 const buttons = document.querySelectorAll('.btn-item');
 
@@ -171,6 +175,8 @@ buttons.forEach(button => {
         break;
     }
 });
+
+// Gelen verilerden element oluşturma
 
 const menuItems = document.querySelector(".section-center");
 
