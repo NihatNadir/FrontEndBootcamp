@@ -1,12 +1,15 @@
-# React + Vite
+# TodoApp with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Todo application built with React. It allows users to add, toggle, delete, and filter tasks based on their completion status. You can also mark all tasks as complete at once, and clear all completed tasks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Add New Tasks**: Users can add new tasks to the list.
+- **Toggle Task Completion**: Users can mark tasks as completed or active.
+- **Delete Tasks**: Users can delete tasks from the list.
+- **Clear Completed Tasks**: Allows users to remove all tasks that are marked as completed.
+- **Filters**: Tasks can be filtered by:
+  - **All**: Displays all tasks.
+  - **Active**: Displays only tasks that are not completed.
+  - **Completed**: Displays only tasks that are completed.
+- **Mark All Tasks as Completed**: A checkbox to mark all tasks as completed at once.
