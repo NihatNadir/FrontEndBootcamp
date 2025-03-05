@@ -13,16 +13,16 @@ function App() {
     if (balance !== targetBalance) {
       const step = Math.ceil(Math.abs(targetBalance - balance) / 25); // Küçük adımlarla değişim
       const interval = setInterval(() => {
-        setBalance((prev) => {
-          if (prev > targetBalance) return Math.max(prev - step, targetBalance);
-          if (prev < targetBalance) return Math.min(prev + step, targetBalance);
+        setTargetBalance((prev) => {
+          if (prev > balance) return Math.max(prev - step, balance);
+          if (prev < balance) return Math.min(prev + step, balance);
           return prev;
         });
       }, 10);
 
       return () => clearInterval(interval);
     }
-  }, [targetBalance, balance]);
+  }, [balance, targetBalance]); // balance or targetBalance changes, trigger animation
 
   const updateCart = (product, quantity) => {
     const newQuantity = Math.max(0, quantity);
@@ -33,12 +33,18 @@ function App() {
 
     // **Bakiye yeterliyse işlemi yap**
     if (balance - costDifference >= 0) {
-      setTargetBalance(targetBalance - costDifference); // Hedef bakiyeyi güncelle (animasyonla değişecek)
+      setBalance(balance - costDifference); // Update balance directly (no animation)
       setCart((prevCart) => {
         const updatedCart = { ...prevCart, [product.id]: newQuantity };
-        if (newQuantity === 0) delete updatedCart[product.id];
+        if (newQuantity === 0) delete updatedCart[product.id]; // Remove item if quantity is 0
         return updatedCart;
       });
+    } else {
+      // Yetersiz bakiye ise işlem yapılmasın, sadece max quantity'yi sınırla
+      const maxQuantity = Math.floor(balance / product.price);
+      if (newQuantity > maxQuantity) {
+        setQuantity(maxQuantity);
+      }
     }
   };
 
@@ -50,7 +56,7 @@ function App() {
   return (
     <div className="container">
       <div className="sticky-header">
-        <h1 className="balance-text">Balance: ${balance.toLocaleString()}</h1>
+        <h1 className="balance-text">Balance: ${targetBalance.toLocaleString()}</h1> {/* Display targetBalance for animation */}
       </div>
       <div className="product-grid">
         {products.map((product) => (
@@ -59,7 +65,7 @@ function App() {
             product={product}
             balance={balance}
             cart={cart}
-            updateCart={updateCart}
+            updateCart={updateCart} // Pass the updateCart function to Card
           />
         ))}
       </div>
@@ -94,4 +100,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

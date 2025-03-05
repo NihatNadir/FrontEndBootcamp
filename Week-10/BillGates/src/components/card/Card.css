@@ -18,7 +18,7 @@
 }
 
 .card h3 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     color: #1f2937;
     margin: 8px 0;
@@ -26,7 +26,7 @@
 
 .card p {
     color: #10b981;
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 12px;
 }
 
@@ -39,6 +39,7 @@
 }
 
 button {
+    font-size: 20px;
     padding: 6px 12px;
     border-radius: 6px;
     color: white;
@@ -74,7 +75,7 @@ input[type="text"] {
     text-align: center;
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 20px;
     padding: 4px;
 }
 
