@@ -21,11 +21,11 @@ To get started with the project:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/todoapp.git
+   git clone https://github.com/NihatNadir/FrontEndBootcamp.git
 
 2. Navigate to the project directory:
     ```bash
-    cd todoapp
+    cd FrontEndBootcamp/Week-12/ToDoApp
 3. Install dependencies and start the development server:
     ```bash
     npm install && npm start

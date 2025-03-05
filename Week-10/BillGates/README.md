@@ -1,12 +1,50 @@
 # BillGates Spend Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple shopping cart application built with React. It allows users to add products to the cart, remove items, view the total price, and update the quantity of each item. Users can also apply discounts and view the final price.
 
-Currently, two official plugins are available:
+[View Live Demo](https://todoapp-920g8yp4u-nihat-nadirs-projects.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add Products to Cart**: Users can add products to the shopping cart.
+- **Remove Products**: Users can remove products from the cart.
+- **Update Quantity**: Users can increase or decrease the quantity of each product in the cart.
+- **Apply Discount**: Users can apply discount codes to get a percentage off the total.
+- **View Total Price**: The total price of the cart is displayed, including discounts.
+- **Responsive Design**: The app is designed to work smoothly on both desktop and mobile devices.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Installation
+To get started with the project:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/NihatNadir/FrontEndBootcamp.git
+
+2. Navigate to the project directory:
+    ```bash
+    cd FrontEndBootcamp/Week-10/BillGates
+3. Install dependencies and start the development server:
+    ```bash
+    npm install && npm start
+
+## Usage
+- Add a Product: Click the "Add to Cart" button to add products to the cart.
+- Update Quantity: Use the "+" and "-" buttons to update the quantity of items in the cart.
+- Remove Product: Click the trash icon next to a product to remove it from the cart.
+- Apply Discount: Enter a discount code in the input field to apply a percentage discount on the total price.
+- View Total Price: The app shows the total price, including applied discounts.
+- Responsive Design: The app adjusts to fit the screen size of the device you are using (desktop or mobile).
+
+## Technologies Used
+- React
+- JSX
+- CSS
+
+## Contributing
+- Fork the repository.
+- Create your branch (git checkout -b feature-name).
+- Commit your changes (git commit -am 'Add new feature').
+- Push to your branch (git push origin feature-name).
+- Create a new Pull Request.
