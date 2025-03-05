@@ -1,0 +1,88 @@
+.card {
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.card img {
+    height: 128px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 8px 0;
+}
+
+.card p {
+    color: #10b981;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.sell {
+    background-color: #ef4444;
+}
+
+button.sell:disabled {
+    background-color: #d1d5db;
+}
+
+button.buy {
+    background-color: #10b981;
+}
+
+button.buy:disabled {
+    background-color: #d1d5db;
+}
+
+input[type="text"] {
+    width: 64px;
+    text-align: center;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 4px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #10b981;
+}
+
+input[type="text"]:disabled {
+    background-color: #f3f4f6;
+}
