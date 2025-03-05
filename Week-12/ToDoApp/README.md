@@ -28,7 +28,7 @@ To get started with the project:
     cd FrontEndBootcamp/Week-12/ToDoApp
 3. Install dependencies and start the development server:
     ```bash
-    npm install && npm start
+    npm install && npm run dev
 
 ## Usage
 - Add a Task: Type a task in the input field and press enter or click the "Add" button.
