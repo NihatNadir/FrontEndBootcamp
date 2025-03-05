@@ -27,7 +27,7 @@ To get started with the project:
     cd FrontEndBootcamp/Week-10/BillGates
 3. Install dependencies and start the development server:
     ```bash
-    npm install && npm start
+    npm install && npm run dev
 
 ## Usage
 - Add a Product: Click the "Add to Cart" button to add products to the cart.
