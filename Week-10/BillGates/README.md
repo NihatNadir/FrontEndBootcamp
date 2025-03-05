@@ -2,7 +2,7 @@
 
 This is a simple shopping cart application built with React. It allows users to add products to the cart, remove items, view the total price, and update the quantity of each item. Users can also apply discounts and view the final price.
 
-[View Live Demo](https://front-end-bootcamp-swart.vercel.app/)
+[View Live Demo](https://spend-bill-gates-money-clone-swart.vercel.app/)
 
 ## Features
 
