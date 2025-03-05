@@ -14,3 +14,24 @@ This is a simple Todo application built with React. It allows users to add, togg
   - **Active**: Displays only tasks that are not completed.
   - **Completed**: Displays only tasks that are completed.
 - **Mark All Tasks as Completed**: A checkbox to mark all tasks as completed at once.
+
+
+## Usage
+- Add a Task: Type a task in the input field and press enter or click the "Add" button.
+- Toggle Completion: Click on a task to toggle its completion status.
+- Delete Task: Click the trash icon next to a task to delete it.
+- Filter Tasks: Choose a filter (All, Active, or Completed) to display tasks based on their completion status.
+- Clear Completed Tasks: Click the "Clear Completed" button to remove all completed tasks from the list.
+- Mark All as Completed: Use the checkbox at the top of the list to mark all tasks as completed at once.
+
+## Technologies Used
+- React
+- JSX
+- CSS
+
+## Contributing
+- Fork the repository.
+- Create your branch (git checkout -b feature-name).
+- Commit your changes (git commit -am 'Add new feature').
+- Push to your branch (git push origin feature-name).
+- Create a new Pull Request.
