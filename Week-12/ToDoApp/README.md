@@ -15,6 +15,18 @@ This is a simple Todo application built with React. It allows users to add, togg
   - **Completed**: Displays only tasks that are completed.
 - **Mark All Tasks as Completed**: A checkbox to mark all tasks as completed at once.
 
+## Installation
+To get started with the project:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/todoapp.git
+
+2. Navigate to the project directory:
+cd todoapp
+3. Install dependencies and start the development server:
+npm install && npm start
 
 ## Usage
 - Add a Task: Type a task in the input field and press enter or click the "Add" button.
