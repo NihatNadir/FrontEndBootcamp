@@ -1,6 +1,6 @@
 function Hero( { navbarHeight } ){
     return (
-        <section id="hero" className="w-full py-8" style={{ marginTop: -navbarHeight }}>
+        <section id="hero" className="w-full py-8" style={{ marginTop: '-87px' }}>
         <article className="container xl:mx-auto text-white py-14 px-4">
             <h1 
             style={{ backgroundColor: "var(--navBg)" }}
