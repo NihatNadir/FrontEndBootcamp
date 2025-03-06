@@ -15,7 +15,7 @@ const PurchaseSection = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full class">
       <article className="container mx-auto">
         <section className="class-title">
           <h3>PURCHASE FROM US</h3>
@@ -24,13 +24,13 @@ const PurchaseSection = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ex explicabo dolorem asperiores quas distinctio repellat illo blanditiis placeat aperiam.
           </p>
         </section>
-        <div className="flex flex-col xl:flex-row xl:gap-5 mx-20">
+        <div className="flex xl:flex-row flex-col xl:gap-5 mx-20">
           {products.map((product) => (
-            <div key={product.id} className="purchase-card p-4 shadow-lg rounded-lg text-center">
+            <div key={product.id} className="purchase-card">
               <div>
-                <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded" />
+                <img src={product.image} alt={product.name} className="w-full object-cover" />
               </div>
-              <div className="purchase-cart mt-4">
+              <div className="purchase-cart">
                 <h6 className="text-lg font-semibold" style={{ color: "var(--navBg)" }}>{product.name}</h6>
                 <p className="text-gray-700" style={{ color: "var(--textColor2)" }}>{product.price}</p>
                 <div

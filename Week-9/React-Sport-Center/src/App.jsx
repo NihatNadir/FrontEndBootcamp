@@ -13,11 +13,12 @@ import Footer from './components/Footer/Footer'
 
 
 function App() {
+  const [navbarHeight, setNavbarHeight] = useState(0);
   
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Navbar setNavbarHeight={setNavbarHeight} />
+      <Hero navbarHeight={navbarHeight} />
       <Stats />
       <OurClass />
       <Bmi />

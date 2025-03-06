@@ -1,9 +1,16 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from "/images/logo.png";
 import "./Navbar.style.css";
 
-function Navbar() {
+function Navbar( { setNavbarHeight } ) {
+
+
     useEffect(() => {
+        const navbar = document.getElementById('navbar');
+        // Navbar yüksekliğini alıyoruz ve state'e kaydediyoruz
+        if (navbar) {
+            setNavbarHeight(navbar.offsetHeight);
+        }
         // Scroll effect for navbar
         function scroll() {
             const navbar = document.getElementById('navbar');
@@ -70,7 +77,7 @@ function Navbar() {
                 button.removeEventListener('click', addEffect);
             });
         };
-    }, []);
+    }, [setNavbarHeight]);
 
     return (
         <nav id="navbar" className="sticky top-0 z-10">

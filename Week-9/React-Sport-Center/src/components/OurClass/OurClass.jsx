@@ -71,8 +71,13 @@ const ClassesSection = () => {
   };
 
   useEffect(() => {
-    // Sayfa ilk yüklendiğinde yoga seçili olmalı, state zaten bu şekilde ayarlanmış.
-  }, []); // Burada ek bir işlem yapılmasına gerek yok, sadece selectedClass'ın ilk değerine odaklanıyoruz.
+    // İlk render'da yoga butonuna aktif sınıfını ve efektini ekleyelim
+    const defaultButton = document.getElementById("yoga");
+    if (defaultButton) {
+      defaultButton.classList.add("active");
+      addEffect(defaultButton);
+    }
+  }, []);
 
   return (
     <section id="classes" className="section w-full">
@@ -94,33 +99,35 @@ const ClassesSection = () => {
               id={key}
               onClick={(e) => {
                 handleClassSelect(key);
-                const activeButton = document.querySelector(".button.active");
-                if (activeButton) {
-                  activeButton.classList.remove("active");
-                  removeEffect(activeButton);
-                }
-                e.target.classList.add("active");
-                addEffect(e.target);
+
+                // Tüm butonlardan "active" sınıfını kaldır
+                document.querySelectorAll(".button").forEach((btn) => {
+                  btn.classList.remove("active");
+                  removeEffect(btn);
+                });
+
+                // Seçili butona "active" sınıfı ekle
+                e.currentTarget.classList.add("active");
+                addEffect(e.currentTarget);
               }}
-              className={`button xl:px-6 xl:py-2 px-1 py-3 rounded-lg xl:w-auto w-[35%] ${
-                selectedClass === key ? "bg-orange-500 text-white" : "bg-gray-300"
-              }`}
+              className={`button xl:px-6 xl:py-2 px-1 py-3 rounded-lg xl:w-auto w-[35%] ${selectedClass === key ? "bg-orange-500 text-white active" : "bg-gray-300"
+                }`}
             >
               {key.charAt(0).toUpperCase() + key.slice(1)}
             </button>
           ))}
         </div>
-
-        <div className="flex xl:flex-row flex-col">
+        
+        <div id="class-container" className="flex xl:flex-row flex-col">
           <div className="flex flex-col flex-1 gap-6 xl:px-20 px-2 order-1">
-            <div>
-              <h4 className="text-lg font-semibold mb-2">{title}</h4>
-              <p className="text-gray-700">{description}</p>
+            <div className="firstContainer">
+              <h4 className="container-title mb-4">{title}</h4>
+              <p className="container-p">{description}</p>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold">Class Schedule</h4>
+            <div className="secondContainer">
+              <h4 className="container-title">Class Schedule</h4>
               {schedule.map((time, index) => (
-                <p key={index} className="text-gray-700 my-2">
+                <p key={index} className="container-p">
                   {time}
                 </p>
               ))}

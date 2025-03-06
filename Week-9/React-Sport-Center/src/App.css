@@ -84,6 +84,7 @@ textarea{
   background-image: url(../images/hero-man.jpg);
   background-repeat: no-repeat;
   background-position: 30% 30%;
+  background-size: cover;
 }
 
 #hero h2 {

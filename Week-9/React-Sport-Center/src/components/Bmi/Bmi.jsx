@@ -4,8 +4,8 @@ const BMICalculator = () => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(null);
+  const [indicatorLeft, setIndicatorLeft] = useState("50%"); // Başlangıç noktası
   const indicatorRef = useRef(null);
-  const containerRef = useRef(null);
 
   const calculateBMI = () => {
     if (height && weight) {
@@ -17,8 +17,6 @@ const BMICalculator = () => {
   };
 
   const updateBMIIndicator = (bmiValue) => {
-    if (!indicatorRef.current || !containerRef.current) return;
-
     const minBMI = 10;
     const maxBMI = 40;
     let leftPercentage = 10 + ((bmiValue - minBMI) / (maxBMI - minBMI)) * 80;
@@ -26,8 +24,7 @@ const BMICalculator = () => {
     if (leftPercentage < 10) leftPercentage = 10;
     if (leftPercentage > 90) leftPercentage = 90;
 
-    indicatorRef.current.style.left = `${leftPercentage}%`;
-    containerRef.current.style.display = "block";
+    setIndicatorLeft(`${leftPercentage}%`);
   };
 
   useEffect(() => {
@@ -41,9 +38,7 @@ const BMICalculator = () => {
       <article className="container mx-auto flex xl:flex-row flex-col gap-10 xl:gap-40">
         <div className="xl:flex-1 xl:w-6/12 w-auto flex flex-col justify-between xl:gap-10 gap-4">
           <h3 className="text-xl font-bold">BMI Calculator</h3>
-          <p>
-            Calculate your Body Mass Index (BMI) to understand your health better.
-          </p>
+          <p>Calculate your Body Mass Index (BMI) to understand your health better.</p>
           <div className="flex xl:flex-row flex-col gap-4 xl:items-center items-start">
             <div>
               <input
@@ -62,22 +57,18 @@ const BMICalculator = () => {
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />
-            </div>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              onClick={calculateBMI}
-            >
-              Calculate
-            </button>
-          </div>
-          {bmi && <p className="font-bold">Your BMI: {bmi}</p>}
-          <div ref={containerRef} className="hidden relative mt-4 w-full h-6 bg-gray-200 rounded">
-            <div ref={indicatorRef} className="absolute top-0 h-6 w-2 bg-red-500" style={{ left: "10%" }}></div>
-          </div>
+            </div>            
+          </div>          
         </div>
-        <div className="image flex-1 xl:w-6/12 w-auto justify-center flex flex-col">
+        <div className="image flex-1 xl:w-6/12 w-auto justify-center flex flex-col relative">
           <p className="text-center font-semibold">Your BMI</p>
           <img className="h-full" src="./images/bmi-index.jpg" alt="BMI Index" />
+          {/* Göstergeyi ekledik */}
+          <div 
+            className="calculate absolute bottom-0 w-4 h-4 bg-red-500" 
+            style={{ left: indicatorLeft, display: bmi ? "block" : "none" }}
+            ref={indicatorRef}
+          ></div>
         </div>
       </article>
     </section>
