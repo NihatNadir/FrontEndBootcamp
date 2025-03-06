@@ -66,8 +66,7 @@ textarea{
 }
 
 #sidebar{
-  display: block;
-  
+  display: block;  
 }
 
 #sidebar a:hover{
@@ -501,9 +500,7 @@ textarea{
     display: block;
     z-index: 20;
   }
-  #navbar #menu a{
-    display: none;    
-  }
+  
   #side{    
     display: block;
     height: auto;
@@ -521,6 +518,10 @@ textarea{
     transition: all 1s ease;    
     opacity: 1;
     font-size: 24px;
+  }
+
+   #navbar #menu a{
+    display: none;    
   }
 
 
