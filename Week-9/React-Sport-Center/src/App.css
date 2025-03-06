@@ -1,0 +1,662 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  user-select: none;
+}
+
+:root {
+  --blueTextColor: #32548A;
+  --textColor: #1E2225;
+  --textColor2: #4D4D4D;
+  --navBg: #355592;
+  --hoverOrange: #F39C11;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a,
+img {
+  cursor: pointer;
+  white-space: nowrap;  
+}
+
+input{
+  background-color: #F1F8FF;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 16px;      
+  cursor: text;
+}
+
+textarea{
+  background-color: #F1F8FF;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: text;
+}
+
+/* NAVBAR */
+
+#navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  
+}
+
+#burger{
+  display: none;
+  cursor: pointer;
+}
+
+#navbar a:last-child {
+  background-color: var(--hoverOrange);
+}
+
+.bg-changed {
+  background-color: var(--navBg);
+}
+
+#sidebar{
+  display: block;
+  
+}
+
+#sidebar a:hover{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  transition: all 0.5s; 
+}
+
+
+/* HERO */
+
+#hero {
+  background-image: url(../images/hero-man.jpg);
+  background-repeat: no-repeat;
+  background-position: 30% 30%;
+}
+
+#hero h2 {
+  line-height: 7rem;
+}
+
+/* CLASS ORTAK OLAN KISIMLAR */
+
+.section {
+  background: linear-gradient(75deg, white 45%, #f6f6f6 45%);
+  background-size: 100% 100%;
+  background-position: top left, bottom left;
+}
+
+.class-title {
+  text-align: center;
+  padding: 40px 40px 20px 40px;
+}
+
+.class-title h3 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--navBg);
+  padding: 20px 20px 8px 20px;
+}
+
+.class-title .class-line {
+  width: 100px;
+  height: 5px;
+  background-color: var(--hoverOrange);
+  margin: 0 auto 15px auto;
+  border-radius: 2px;
+}
+
+.class-title p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--textColor2);
+  line-height: 1.6;
+  padding: 20px 16rem;
+}
+
+
+/* OUR CLASS Container */
+
+#classes{
+  scroll-margin-top: 50px;
+}
+
+.button {
+  background-color: var(--navBg);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+#class-container {
+  padding: 20px;
+  color: var(--textColor2);
+}
+
+#class-container h4 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+#class-container p {
+  font-size: 16px;
+  color: var(--textColor2);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.button{
+  position: relative;
+}
+
+.button.active {
+  background-color: var(--hoverOrange);  
+}
+
+.effect{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,100%);
+  background-color: var(--hoverOrange);  
+  width: 30%;
+  height: 40%;
+  z-index: 5;
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
+}
+
+/* BMI */
+
+#bmi h3 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--navBg);
+}
+
+#bmi p {  
+  font-weight: 600;
+  color: var(--textColor2);
+}
+
+#bmi input {
+  font-size: 16px;
+  padding: 2px 4px;
+  border: 2px solid var(--textColor2);
+  border-radius: 4px;
+  cursor: text;
+}
+
+#bmi .image p{
+  font-size: 24px; 
+  font-weight: 500;
+}
+
+.image{
+  position: relative;
+}
+
+.calculate{
+  display: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+  background-color: var(--hoverOrange);
+  width: 10%;
+  height: 10%;
+  z-index: 5;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);  
+}
+
+/* Trainer */
+
+#trainer{
+  scroll-margin-top: 50px;
+}
+
+.trainer-images>img {
+  border: 2px solid var(--hoverOrange);
+  z-index: 8;
+}
+
+
+.image-box {
+  position: relative;
+  z-index: 5;
+  max-width: 100%;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.image-box::after,
+.image-box::before {
+  transition: all 1s ease;
+}
+
+.image-box img {
+  position: relative;
+  z-index: 5;
+}
+
+.top-box,
+.left-box,
+.right-box,
+.bottom-box {
+  position: absolute;
+  background-color: var(--navBg);
+  transition: all 1s ease;
+  z-index: 4;
+}
+
+.top-box {
+  width: 25%;
+  height: 5%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left-box {
+  width: 5%;
+  height: 25%;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.right-box {
+  width: 5%;
+  height: 25%;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.bottom-box {
+  width: 25%;
+  height: 5%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.image-box:hover .left-box,
+.image-box:hover .right-box {
+  top: 62.5%;
+  height: 50%;
+}
+
+.image-box:hover .bottom-box {
+  width: 75%;
+}
+
+.trainer-box {
+  position: absolute;
+  background-color: var(--navBg);
+  width: 70%;
+  height: 30%;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  visibility: hidden;  
+  opacity: 0;  
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+.trainer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  background-color: var(--navBg);
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 7;
+  width: 90%;
+  height: 20%;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+.trainer-text .trainer-title {
+  font-size: 20px;
+}
+
+.image-box:hover .trainer-box,
+.image-box:hover .trainer-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* Purchase */
+
+.purchase-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.purchase-card:hover .cart-container{
+  background-color: var(--navBg);
+  transition: all 0.5s;
+  color: white;
+}
+
+.purchase-card:hover .fa-cart-shopping{
+  color: var(--hoverOrange);
+}
+
+
+.purchase-card h6 {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.purchase-card p {
+  opacity: 0.8;
+}
+
+
+.purchase-cart {
+  text-align: center;
+}
+
+.cart-container {
+  position: relative;
+  padding: 8px 0;
+}
+
+.cart-container p {
+  font-size: 16px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.cart-container .fa-cart-shopping {
+  font-size: 20px;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);  
+}
+
+/* Client */
+
+#review{
+  scroll-margin-top: 50px;
+}
+
+.client-content {
+  position: relative;
+  background-color: var(--navBg);
+  color: white;
+  padding: 0.8rem 1.5rem;
+}
+
+.client-content::after {
+  content: "";
+  position: absolute;
+  background-color: #8197BF;
+  transform: translate(0%, 100%);
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  aspect-ratio: 1;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 5;
+}
+
+.client-content::before {
+  content: "";
+  position: absolute;
+  background-color: #8197BF;
+  transform: translate(0%, 100%);
+  bottom: 0;
+  right: 0;
+  height: 40%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 5;
+}
+
+.client-title h6 {
+  font-weight: 500;
+}
+
+.client-title p {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* Contact */
+
+#contact{
+  scroll-margin-top: 50px;
+}
+
+.demo{
+  color: var(--textColor2); 
+}
+
+.demo h6{
+  font-size: 24px; 
+}
+
+#form h6{
+  font-size: 28px;
+  color: var(--textColor2);
+}
+
+/* Footer */
+
+#footer {
+  background-color: var(--navBg);
+}
+
+#footer-buttons h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#footer-buttons p {
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width:1440px) {
+
+  /* Navbar */
+
+  #burger{
+    position: relative;
+    display: block;
+    z-index: 20;
+  }
+  #navbar #menu a{
+    display: none;    
+  }
+  #side{    
+    display: block;
+    height: auto;
+    right: 0;
+    text-align: center;
+  }
+
+  #sidebar{
+    position: absolute;
+    width: 45%;
+    height: auto;
+    z-index: 15;
+    right: 0;
+    top: 0;    
+    transition: all 1s ease;    
+    opacity: 1;
+    font-size: 24px;
+  }
+
+
+  /* Hero */
+
+  #hero{
+    scroll-margin-top: 100px;
+  }
+
+  #hero h2 {
+    line-height: 3rem;
+  }
+
+  #hero button{
+    text-align: start;
+  }
+
+  /* CLASS ORTAK OLAN KISIMLAR */
+
+  .class-title p {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--textColor2);
+    line-height: 1.6;
+    padding: 20px 2rem;
+  }
+
+  .class-title .class-line {
+    width: 100px;
+    height: 10px;
+    background-color: var(--hoverOrange);
+    margin: 0 auto 15px auto;
+    border-radius: 5px;
+  }
+
+  /* Our Class */
+
+  #classes{
+    scroll-margin-top: 50px;
+  }
+
+  .button {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  #class-container h4 {
+    font-size: 34px;
+    font-weight: 800;
+  }
+  
+  #class-container p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--textColor2);
+    line-height: 1.6;    
+  }
+
+  /* Trainer */
+
+  #trainer{
+    scroll-margin-top: 50px;
+  }
+
+  /* Purchase */
+
+  .purchase-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  /* Review Client */
+
+  #review{
+    scroll-margin-top: 50px;
+  }
+
+  .client-title h6 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .client-title p {
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+
+  .client-content::after {
+    content: "";
+    position: absolute;
+    background-color: #8197BF;
+    transform: translate(0%, 100%);
+    bottom: 0;
+    left: 0;
+    height: 40%;
+    aspect-ratio: 1;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: 5;
+  }
+
+  .client-content::before {
+    content: "";
+    position: absolute;
+    background-color: #8197BF;
+    transform: translate(0%, 100%);
+    bottom: 0;
+    right: 0;
+    height: 40%;
+    aspect-ratio: 1;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 5;
+  }
+
+  /* Contact */
+  #contact{
+    scroll-margin-top: 50px;
+  }
+
+  .demo h6{
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .demo p{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #form h6{
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+}
+
