@@ -1,6 +1,6 @@
 # Fitness and Health Application
 
-### [Visit Project](https://incredible-pixie-a96801.netlify.app/)
+### [Visit Project](https://react-sport-center-tau.vercel.app/)
 
 This project is a responsive web application designed to help users track their Body Mass Index (BMI) and explore various fitness programs. It leverages Tailwind CSS for styling and JavaScript for dynamic functionalities.
 
