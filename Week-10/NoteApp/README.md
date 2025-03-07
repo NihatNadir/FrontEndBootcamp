@@ -2,6 +2,12 @@
 
 NotesApp is an application that allows users to add, search, edit, and delete notes. Users can add notes with different colors, search through them, and edit or delete them as needed. The app provides a simple and intuitive interface for managing notes.
 
+## ScreenShot
+![ss1](https://github.com/user-attachments/assets/ee793414-8b83-43a2-83ee-5fe5a402fb1f)
+![ss2](https://github.com/user-attachments/assets/1274d1c9-71d7-4435-8d25-1044595c6eb4)
+![ss3](https://github.com/user-attachments/assets/fcd0efa4-a33c-4a8c-8a35-c35422ef4a6a)
+
+
 ## Features
 
 - **Add Notes**: Users can enter text in the textarea to add a new note.
