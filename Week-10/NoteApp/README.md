@@ -2,6 +2,9 @@
 
 NotesApp is an application that allows users to add, search, edit, and delete notes. Users can add notes with different colors, search through them, and edit or delete them as needed. The app provides a simple and intuitive interface for managing notes.
 
+## Demo Page
+[Visit Demo Page](https://note-app-six-xi.vercel.app/)
+
 ## ScreenShot
 [Go to Screenshots](#screenshots)
 
