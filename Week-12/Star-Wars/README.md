@@ -93,6 +93,8 @@ http://localhost:5173
 ├── README.md
 ├── package.json
 
+```
+
 ## 🛠 Custom Styling
 
 1. Star Wars Font Implementation
@@ -106,7 +108,6 @@ http://localhost:5173
 5. Add the following to your styles.css:
 
    ```css
-
 @font-face {
     font-family: 'Star Jedi';
     src: url('/Starjedi.ttf') format('truetype');
@@ -114,6 +115,8 @@ http://localhost:5173
 .title {
     font-family: 'Star Jedi', sans-serif;
 }
+
+
 
 6. Search Bar Border with ::after
 
