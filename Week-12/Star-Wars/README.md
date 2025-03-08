@@ -47,10 +47,12 @@ This is a Star Wars themed web application built with React. The application all
    cd FrontEndBootcamp/Week-12/Star-Wars   
 
 3. Install dependencies
-npm install
+    ```bash
+    npm install
 
 4. Start the development server
-npm run dev
+    ```bash
+    npm run dev
 
 5. Open the project in your browser
 http://localhost:5173
