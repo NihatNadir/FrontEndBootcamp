@@ -1,0 +1,99 @@
+.detail-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.detail-container .card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    height: auto;
+    position: relative;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container .card::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 20px;
+    border: 6px solid #252834;
+}
+
+.detail-container {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Görsellerin boyutları */
+.detail-container .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 12px 12px 8px rgba(36, 33, 18, 1);
+}
+
+/* Başlık için stil */
+.detail-container .card-title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 16px;
+    color: #C1BFDF;
+}
+
+.detail-container .card-title::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 4px;
+    background-color: #C1BFDF;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+/* Metin kısmı için stil */
+.card-text {
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 8px 0;
+    color: #C1BFDF;
+}
+
+/* Kalın yazı stili */
+.bold {
+    font-weight: bold;
+}
+
+/* "Back to Home" bağlantısı */
+.link-container {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: #1C4059;
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.link-container a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
