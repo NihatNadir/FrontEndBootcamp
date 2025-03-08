@@ -2,6 +2,8 @@
 
 ## 🚀 Project Overview
 
+[View Live Demo](https://star-wars-api-fawn-nine.vercel.app/)
+
 This is a Star Wars themed web application built with React. The application allows users to search for starships, view details, and explore various aspects of the Star Wars universe with a unique design inspired by the franchise.
 
 ## 📌 Features
