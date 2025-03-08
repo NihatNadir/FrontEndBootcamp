@@ -67,6 +67,8 @@ http://localhost:5173
 
 ## 📂 Folder Structure
 
+   ```css
+
 ├── public
 │   ├── Starjedi.ttf  # Custom Star Wars Font
 │   |  
@@ -103,7 +105,7 @@ http://localhost:5173
 
 5. Add the following to your styles.css:
 
-   ```bash
+   ```css
 
 @font-face {
     font-family: 'Star Jedi';
@@ -115,7 +117,7 @@ http://localhost:5173
 
 6. Search Bar Border with ::after
 
-   ```bash
+   ```css
 
 .search-container::after {
     content: "";
